@@ -24,7 +24,7 @@ if [[ -z "${PYTHON_BIN}" ]]; then
   PYTHON_BIN=python
 fi
 
-GPU_ID=${GPU_ID:-2}
+GPU_ID=${GPU_ID:-0}
 export GPU_ID
 export CUDA_VISIBLE_DEVICES=${GPU_ID}
 
@@ -48,7 +48,7 @@ RUN_TAG=${RUN_TAG:-}
 export SAVE_ROOT RUN_TAG
 
 # lm-eval task registry path (adds tasks like minerva_math500/humaneval_instruct/mbpp_instruct)
-LM_EVAL_INCLUDE_PATH=${LM_EVAL_INCLUDE_PATH:-/workspace/Dream/eval_instruct/lm_eval/tasks}
+LM_EVAL_INCLUDE_PATH=${LM_EVAL_INCLUDE_PATH:-/workspace/KLASS_experiment/data/tasks}
 export LM_EVAL_INCLUDE_PATH
 
 # Bench-specific limits (lm-eval --limit)
@@ -252,9 +252,9 @@ if echo " ${TASKS:-gsm8k_cot minerva_math500 humaneval_instruct mbpp_instruct if
   require_code_eval_opt_in
 fi
 
-for steps in $(get_steps_list "${GSM8K_MAX_NEW_TOKENS}"); do
-  run_lmeval_once "${SAVE_DIR}/lm_eval/dream/gsm8k_cot/steps${steps}" "gsm8k_cot" "${GSM8K_LIMIT}" "${GSM8K_MAX_NEW_TOKENS}" "${DEFAULT_MAX_LENGTH}" "${steps}" "${KLASS_CONF_THRESHOLD}" "${KLASS_KL_THRESHOLD}" "${KLASS_HISTORY_LENGTH}" "${KLASS_UNMASK_STRATEGY}"
-done
+# for steps in $(get_steps_list "${GSM8K_MAX_NEW_TOKENS}"); do
+#   run_lmeval_once "${SAVE_DIR}/lm_eval/dream/gsm8k_cot/steps${steps}" "gsm8k_cot" "${GSM8K_LIMIT}" "${GSM8K_MAX_NEW_TOKENS}" "${DEFAULT_MAX_LENGTH}" "${steps}" "${KLASS_CONF_THRESHOLD}" "${KLASS_KL_THRESHOLD}" "${KLASS_HISTORY_LENGTH}" "${KLASS_UNMASK_STRATEGY}"
+# done
 
 for steps in $(get_steps_list "${MATH_MAX_NEW_TOKENS}"); do
   run_lmeval_once "${SAVE_DIR}/lm_eval/dream/minerva_math500/steps${steps}" "minerva_math500" "${MATH_LIMIT}" "${MATH_MAX_NEW_TOKENS}" "${DEFAULT_MAX_LENGTH}" "${steps}" "${KLASS_CONF_THRESHOLD}" "${KLASS_KL_THRESHOLD}" "${KLASS_HISTORY_LENGTH}" "${KLASS_UNMASK_STRATEGY}"

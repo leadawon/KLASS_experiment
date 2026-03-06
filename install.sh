@@ -5,7 +5,7 @@ echo "=== Setting up environment ==="
 
 # Install dependencies
 echo "Installing Python dependencies..."
-pip install -r requirements.txt
+
 
 # Create model directory
 mkdir -p models
@@ -13,7 +13,7 @@ cd models
 
 echo "=== Downloading models from Hugging Face ==="
 # Download models using huggingface-cli
-huggingface-cli download GSAI-ML/LLaDA-8B-Instruct --local-dir LLaDA-8B-Instruct
+
 huggingface-cli download Dream-org/Dream-v0-Instruct-7B --local-dir Dream-v0-Instruct-7B
 
 cd ..
