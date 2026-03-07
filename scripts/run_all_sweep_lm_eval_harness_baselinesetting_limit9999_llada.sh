@@ -24,7 +24,7 @@ if [[ -z "${PYTHON_BIN}" ]]; then
   PYTHON_BIN=python
 fi
 
-GPU_ID=${GPU_ID:-2}
+GPU_ID=${GPU_ID:-0}
 export GPU_ID
 export CUDA_VISIBLE_DEVICES=${GPU_ID}
 
