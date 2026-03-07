@@ -1,0 +1,17 @@
+{
+  "model": "Dream-v0-Instruct-7B",
+  "dataset": "generate_until",
+  "total_items": 50,
+  "num_samples": 1,
+  "total_forward_passes": 6598,
+  "avg_forward_passes_per_item": 131.96,
+  "avg_forward_passes_per_sample": 131.96,
+  "timestamp_utc": "2026-02-25T08:21:35+00:00",
+  "extra": {
+    "lm_eval": true,
+    "task_hint": "generate_until",
+    "device": "cuda",
+    "max_new_tokens_default": 768,
+    "max_length": 4096
+  }
+}
