@@ -48,7 +48,7 @@ RUN_TAG=${RUN_TAG:-}
 export SAVE_ROOT RUN_TAG
 
 # lm-eval task registry path (adds tasks like minerva_math500/humaneval_instruct/mbpp_instruct)
-LM_EVAL_INCLUDE_PATH=${LM_EVAL_INCLUDE_PATH:-/workspace/Dream/eval_instruct/lm_eval/tasks}
+LM_EVAL_INCLUDE_PATH=${LM_EVAL_INCLUDE_PATH:-workspace/KLASS_experiment/data/tasks}
 export LM_EVAL_INCLUDE_PATH
 
 # Bench-specific limits (lm-eval --limit)

@@ -1,0 +1,17 @@
+{
+  "model": "LLaDA-8B-Instruct",
+  "dataset": "generate_until",
+  "total_items": 541,
+  "num_samples": 1,
+  "total_forward_passes": 4910,
+  "avg_forward_passes_per_item": 9.075785582255083,
+  "avg_forward_passes_per_sample": 9.075785582255083,
+  "timestamp_utc": "2026-03-07T16:07:59+00:00",
+  "extra": {
+    "lm_eval": true,
+    "task_hint": "generate_until",
+    "device": "cuda",
+    "max_new_tokens_default": 768,
+    "max_length": 4096
+  }
+}
